@@ -1,5 +1,6 @@
 import React from 'react';
-import { ThemeProvider } from 'styled-components'
+import { ThemeProvider, DefaultTheme } from 'styled-components'
+import usePersistedState from './utils/usePersistedState'
 
 import light from './styles/themes/light'
 import dark from './styles/themes/dark'
@@ -8,7 +9,7 @@ import Header from './components/header'
 
 function App() {
 
-  const [theme, setTheme] = React.useState(light)
+  const [theme, setTheme] = usePersistedState<DefaultTheme>('theme', light)
 
   const tootleTheme = () => {
     setTheme(theme.tittle === 'light' ? dark : light)

@@ -13,7 +13,7 @@ const Header: React.FC<Props> = ({ tootleTheme }) => {
     const { colors, tittle } = React.useContext(ThemeContext)
     return (
         <Container>
-            Hellow horld
+            Theme Switcher
 
             <Switch
                 onChange={tootleTheme}
